@@ -45,7 +45,7 @@ ARG                             VERSIO_VERSION
 LABEL                           build-image=$BUILD_IMAGE
 LABEL                           rt-image=$RT_IMAGE
 LABEL                           versio-version=$VERSIO_VERSION
-COPY                            entrypoint.sh /entrypoint.sh
+//COPY                            entrypoint.sh /entrypoint.sh
 WORKDIR                         /workspace
 VOLUME                          /workspace
 COPY --from=build               /dist/bin/ /bin/
