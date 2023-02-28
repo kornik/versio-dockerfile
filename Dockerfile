@@ -54,5 +54,5 @@ COPY --from=build               /lib/x86_64-linux-gnu/libgpg* /lib/x86_64-linux-
 COPY --from=build               /lib/x86_64-linux-gnu/libgcc_s* /lib/x86_64-linux-gnu/
 COPY --from=build               /usr/lib/x86_64-linux-gnu/libassuan* /usr/lib/x86_64-linux-gnu/
 #RUN                             ls /bin/
-ENTRYPOINT                      ["/bin/versio"]
-CMD                             ["plan"]
+ENTRYPOINT                      ["/bin/versio", "plan"]
+#CMD                             ["plan"]
