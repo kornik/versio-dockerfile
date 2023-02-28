@@ -45,7 +45,6 @@ ARG                             VERSIO_VERSION
 LABEL                           build-image=$BUILD_IMAGE
 LABEL                           rt-image=$RT_IMAGE
 LABEL                           versio-version=$VERSIO_VERSION
-COPY                            entrypoint.sh /entrypoint.sh
 #WORKDIR                         /workspace
 #VOLUME                          /workspace
 COPY --from=build               /dist/bin/ /bin/
@@ -54,5 +53,6 @@ COPY --from=build               /lib/x86_64-linux-gnu/libgpg* /lib/x86_64-linux-
 COPY --from=build               /lib/x86_64-linux-gnu/libgcc_s* /lib/x86_64-linux-gnu/
 COPY --from=build               /usr/lib/x86_64-linux-gnu/libassuan* /usr/lib/x86_64-linux-gnu/
 #RUN                             ls /bin/
+COPY                            entrypoint.sh /entrypoint.sh
 ENTRYPOINT                      ["/entrypoint.sh"]
 #CMD                             ["plan"]
