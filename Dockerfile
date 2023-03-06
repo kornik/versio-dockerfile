@@ -54,5 +54,5 @@ COPY --from=build               /lib/x86_64-linux-gnu/libgcc_s* /lib/x86_64-linu
 COPY --from=build               /usr/lib/x86_64-linux-gnu/libassuan* /usr/lib/x86_64-linux-gnu/
 #RUN                             ls /bin/
 # COPY                            entrypoint.sh /entrypoint.sh
-ENTRYPOINT                      ["/bin/versio", "plan"]
+ENTRYPOINT                      ["/bin/versio","vcs-level-min=local" "vcs-level-max=smart" "plan"]
 #CMD                             ["plan"]
