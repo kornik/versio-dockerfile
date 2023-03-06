@@ -55,4 +55,4 @@ COPY --from=build               /usr/lib/x86_64-linux-gnu/libassuan* /usr/lib/x8
 #RUN                             ls /bin/
 # COPY                            entrypoint.sh /entrypoint.sh
 ENTRYPOINT                      ["/bin/versio"]
-CMD                             ["-l", "local", "plan"]
+CMD                             ["vcs-level-min=local", "vcs-level-max=smart", "-l", "local", "plan"]
