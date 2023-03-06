@@ -53,6 +53,6 @@ COPY --from=build               /lib/x86_64-linux-gnu/libgpg* /lib/x86_64-linux-
 COPY --from=build               /lib/x86_64-linux-gnu/libgcc_s* /lib/x86_64-linux-gnu/
 COPY --from=build               /usr/lib/x86_64-linux-gnu/libassuan* /usr/lib/x86_64-linux-gnu/
 #RUN                             ls /bin/
-COPY                            entrypoint.sh /entrypoint.sh
-ENTRYPOINT                      ["/entrypoint.sh"]
+# COPY                            entrypoint.sh /entrypoint.sh
+ENTRYPOINT                      ["/bin/versio", "plan"]
 #CMD                             ["plan"]
